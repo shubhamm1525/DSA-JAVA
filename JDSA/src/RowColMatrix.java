@@ -19,7 +19,7 @@ public class RowColMatrix {
         int c = arr.length - 1;
 
         while(r < arr.length && c >= 0){
-            //Here we are checking if the [r][c] element is equalts to our target element then we are returning the
+            //Here we are checking if the [r][c] element is equals to our target element then we are returning the
             //row and column index values.
             if(arr[r][c] == target){
                 return new int[]{r,c};
@@ -28,7 +28,7 @@ public class RowColMatrix {
                 r++;
             }else {
                 //finally here we are excluding the column directly as the elements in that column is greater than
-                //target so we can remove this column for searching target.
+                //target, so we can remove this column for searching target.
                 c--;
             }
         }
