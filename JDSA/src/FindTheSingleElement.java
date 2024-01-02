@@ -1,4 +1,6 @@
 package JDSA.src;
+import java.util.*;
+import java.util.HashMap;
 
 /*
 Striver A-Z : https://takeuforward.org/arrays/find-the-number-that-appears-once-and-the-other-numbers-twice/
@@ -16,7 +18,7 @@ Explanation: 1, 3, and 4 occur exactly twice. 2 occurs exactly once. Hence the a
 public class FindTheSingleElement {
     public static void main(String[] args) {
         int[] arr = {1, 1, 2, 3, 3, 4, 4};
-        int result = getSingleElement(arr);
+        int result = getSingleElement2(arr);
         System.out.println("Result : " + result);
     }
     //Brute Approach:
@@ -41,5 +43,29 @@ public class FindTheSingleElement {
             }
         }
         return -1;
+    }
+
+    //Better : Approcah using Maps
+    //Iterate through list items and store the element as key and No of occourence as value.
+    //If the key is not present in Map add it to map and set default value to 1
+    //If key is already present then update its value by 1
+    public static int getSingleElement2(int []arr){
+        int Result = -1;
+        int n = arr.length;
+        HashMap<Integer,Integer> myMap = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            if (myMap.containsKey(arr[i])){
+                myMap.put(arr[i], myMap.getOrDefault(arr[i],0)+1 );
+            }else {
+                myMap.put(arr[i],1 );
+            }
+        }
+        for (Map.Entry<Integer,Integer> Entry: myMap.entrySet()){
+            if (Entry.getValue().equals(1)){
+                Result = Entry.getKey();
+            }
+        }
+    return Result;
+
     }
 }
