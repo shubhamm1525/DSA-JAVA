@@ -18,17 +18,23 @@ public class FindTheSingleElement {
         int result = getSingleElement(arr);
         System.out.println("Result : " + result);
     }
-
+    //Brute Approach:
     public static int getSingleElement(int []arr){
-        // Write your code here.
+        // Loop through all elements from the array
         for (int i = 0; i < arr.length; i++) {
+            // Select 1st element arr[i] = 1;
             int num  = arr[i];
             int counter = 0;
+            //again loop through the same elements in array
             for (int j = 0; j < arr.length; j++) {
+                //compare if arr[i] = 1 and arr[j] = 1 are equal if yes increase counter by 1
+                //means if a number is repeated for that number counter will be 2
+                //here for "1" counter will be 2 for "2" counter will be 1
                 if (arr[j] == num) {
                     counter ++;
                 }
             }
+            //hence when arr[i] == 2, counter will be 1 and the answer will be "2"
             if (counter == 1) {
                 return arr[i];
             }
