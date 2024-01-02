@@ -1,6 +1,7 @@
 package JDSA.src;
 
 /*
+Striver A-Z : https://takeuforward.org/arrays/find-the-number-that-appears-once-and-the-other-numbers-twice/
 Link : https://www.codingninjas.com/studio/problems/find-the-single-element_6680465
 Problem statement
 You are given a sorted array 'arr' of positive integers of size 'n'.
